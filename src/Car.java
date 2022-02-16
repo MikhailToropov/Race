@@ -1,10 +1,13 @@
-abstract class Car{
+public class Car{
     private final String name;
     private final int maxSped;
     private int currentSpeed;
-    public Car(String name, int maxSped){
-        this.name = name;
-        this.maxSped = maxSped;
+    private static int numberOfCar=0;
+    protected String color;
+    public Car(String argumentName, int argumentMaxSped){
+        this.name = argumentName;
+        this.maxSped = argumentMaxSped;
+        numberOfCar+=1;
     }
     public String getName() {
         return this.name;
@@ -16,6 +19,10 @@ abstract class Car{
 
     public void setCurrentSpeed(int currentSpeed) {
         this.currentSpeed = currentSpeed;
+    }
+
+    public static String getNumberOfCar(){
+        return String.format("Number of SpeedCar is %s", numberOfCar);
     }
 
 }
